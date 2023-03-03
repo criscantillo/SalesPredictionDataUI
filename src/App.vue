@@ -1,28 +1,41 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="primary"
+      dark
+      dense
+      height="60"
+    >
+      <v-toolbar-title>Sales Date Prediction App</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <div>
+        <v-img
+          :src="require('./assets/logo.png')"
+          contain
+          height="50"
+        />
+      </div> 
+    </v-app-bar>
+
+    <v-main>
+      <sales-prediction-data />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SalesPredictionData from './components/SalesPredictionData';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: {
+    SalesPredictionData,
+  },
+
+  data: () => ({
+    //
+  }),
+};
+</script>
